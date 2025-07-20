@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather History</title>
+    <style>
+        body { font-family: Arial; background: #fff8f0; text-align: center; }
+        table { margin: 30px auto; border-collapse: collapse; }
+        th, td { padding: 50px 20px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>📊 Full Weather History</h1>
+    <table>
+        <tr>
+            <th>City</th>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Description</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for record in history %}
+        <tr>
+            <td>{{ record.city }}</td>
+            <td>{{ record.temperature }}°C</td>
+            <td>{{ record.humidity }}%</td>
+            <td>{{ record.description }}</td>
+            <td>{{ record.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">← Back</a>
+</body>
+</html>

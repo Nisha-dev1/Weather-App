@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <style>
+        body { font-family: Arial; background: #f0f8ff; text-align: center; }
+        form, .result, .history { margin-top: 30px; }
+        input { padding: 10px; width: 300px; }
+        button { padding: 10px 20px; }
+        .error { color: red; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>🌦️ Weather Checker</h1>
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city name" required>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if weather %}
+        <div class="result">
+            <h2>🌍 Weather in {{ weather.city }}</h2>
+            <p>Temperature: {{ weather.temperature }}°C</p>
+            <p>Humidity: {{ weather.humidity }}%</p>
+            <p>Description: {{ weather.description }}</p>
+        </div>
+    {% endif %}
+
+    {% if history %}
+        <div class="history">
+            <h3>📜 Recent Weather History</h3>
+            <ul>
+                {% for record in history %}
+                    <li>{{ record.city }} - {{ record.temperature }}°C - {{ record.timestamp.strftime('%Y-%m-%d %H:%M') }}</li>
+                {% endfor %}
+            </ul>
+            <a href="/history">View Full History</a>
+        </div>
+    {% endif %}
+</body>
+</html>
