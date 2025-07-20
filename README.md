@@ -25,11 +25,11 @@ A modern weather application built with **Flask**, **MongoDB**, and **OpenWeathe
 
 ## 🖼️ Screenshots
 
-<img src="screenshot/img1.png" alt="Homepage" width="500">
+<img src="screenshots/img1.png" alt="Homepage" width="500">
 <br>
-<img src="screenshot/img2.png" alt="History page" width="500">
+<img src="screenshots/img2.png" alt="History page" width="500">
 <br>
-<img src="screenshot/img3.png" alt="Mongo Shell with data page" width="500">
+<img src="screenshots/img3.png" alt="Mongo Shell with data page" width="500">
 
 ---
 
